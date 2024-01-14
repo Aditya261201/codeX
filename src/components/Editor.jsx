@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 // import 'codemirror/lib/codemirror.css'
 // import 'codemirror/theme/material.css'
 // import 'codemirror/mode/xml/xml'
@@ -13,10 +13,6 @@ const Editor = (props) => {
 
     const {language , displayname , value , onChange} = props;
 
-    function handleChange(editor,data,value){
-        onChange(value);
-    }
-
 
 
     return (
@@ -27,8 +23,9 @@ const Editor = (props) => {
             <CodeEditor
                 className='editor'
                 language={language}
+                value={value}
                 placeholder={`Please enter ${language} code.`}
-                onChange={(evn) => setCode(evn.target.value)}
+                onChange={(evn) =>onChange(evn.target.value)}
                 padding={15}
                 style={{
                     color:"white",
