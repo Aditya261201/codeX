@@ -1,7 +1,23 @@
-.navbar{
-    height: 5vh;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;1,700&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
 }
 
+.navbar{
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
+.navicon{
+    margin-left: 10px;
+}
+.navheading{
+    padding: 15px;
+}
+.refresh{
+    margin-right: 10px;
+}
 .top-pane{
     background-color: grey;
     height: 45vh;

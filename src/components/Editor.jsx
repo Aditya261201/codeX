@@ -1,11 +1,6 @@
 import React, {useState} from 'react'
-// import 'codemirror/lib/codemirror.css'
-// import 'codemirror/theme/material.css'
-// import 'codemirror/mode/xml/xml'
-// import 'codemirror/mode/javascript/javascript'
-// import 'codemirror/mode/css/css'
 import CodeEditor from '@uiw/react-textarea-code-editor';
-
+import { IoIosRefresh } from "react-icons/io";
 
 
 
@@ -19,6 +14,8 @@ const Editor = (props) => {
         <div className="editor-container">
             <div className="editorTitle">
                 {displayname}
+                <IoIosRefresh className='refresh' onClick={()=>{onChange('')}} />
+
             </div>
             <CodeEditor
                 className='editor'
