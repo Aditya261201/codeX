@@ -2,6 +2,8 @@ import './App.css'
 import React, { useState } from 'react'
 import Editor from './components/Editor'
 import Navbar from './components/Navbar'
+import { useTheme } from "./ThemeContext";
+
 
 function App() {
 
@@ -9,6 +11,7 @@ function App() {
 	const [css, setcss] = useState('');
 	const [js, setjs] = useState('');
 
+	const { theme } = useTheme();
 
 	const srcDoc = `
         <html>
@@ -21,7 +24,7 @@ function App() {
 	return (
 		<>
 			<Navbar />
-			<div className="top-pane">
+			<div className={theme === "light" ? "top-pane" : "top-pane-dark"}>
 				<Editor displayname="HTML" language="html" value={html} onChange={sethtml} />
 				<Editor displayname="CSS" language="css" value={css} onChange={setcss} />
 				<Editor displayname="JS" language="js" value={js} onChange={setjs} />
